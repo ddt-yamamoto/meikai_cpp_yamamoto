@@ -1,68 +1,81 @@
 /*
-�����K2-11
-�L�[�{�[�h����ǂݍ��񂾎O�̐����̒����l�����߂ĕ\������v���O�������쐬����B
-�����Ƃ���2,3,1�̒����l��2�ŁA1,2,1�̒����l��1�ŁA3,3,3�̒����l��3�ł���B
+■演習2-11
+キーボードから読み込んだ三つの整数の中央値を求めて表示するプログラムを作成せよ。
+※たとえば2,3,1の中央値は2で、1,2,1の中央値は1で、3,3,3の中央値は3である。
 */
 
-// ���o�͂������̂ŁA�C���N���[�h
+// 入出力を扱うので、インクルード
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// ���͒l���󂯎�邽�߂̕ϐ��̐錾
-	int inputIntFirst;
-	int inputIntSecond;
-	int inputIntThird;
+	// 入力値を受け取るための変数の宣言
+	int inputInt1st; // 整数A
+	int inputInt2nd; // 整数B
+	int inputInt3rd; // 整数C
 	
-	// �L�[�{�[�h����̓��͂𑣂��A���͂��ꂽ�l��ϐ��Ɋi�[
-	cout << "����A�F";		cin >> inputIntFirst;
-	cout << "����B�F";		cin >> inputIntSecond;
-	cout << "����C�F";		cin >> inputIntThird;
+	// キーボードからの入力を促す
+	cout << "整数A：";
 	
-	// �ő�l�A�����l�A�ŏ��l������ϐ������ꂼ��錾
-	int maxInt;
-	int midInt;
-	int minInt;
+	// 入力された値を変数に格納
+	cin >> inputInt1st;
 	
-	// ���A�����͒l��召��r���Ă����A�b�菇�ʂ����Ă���
-	if( inputIntFirst > inputIntSecond ){
+	// キーボードからの入力を促す
+	cout << "整数B：";
+	
+	// 入力された値を変数に格納
+	cin >> inputInt2nd;
+	
+	// キーボードからの入力を促す
+	cout << "整数C：";
+	
+	// 入力された値を変数に格納
+	cin >> inputInt3rd;
+	
+	// 最大値、中央値、最小値を入れる変数をそれぞれ宣言
+	int maxInt; // 最大値
+	int midInt; // 中央値
+	int minInt; // 最小値
+	
+	// 第一、第二入力値を大小比較しておき、暫定順位をつけておく
+	if( inputInt1st > inputInt2nd ){
 		
-		// �傫���ق���maxInt,�������ق���minInt�ɑ������
-		maxInt = inputIntFirst;
-		minInt = inputIntSecond;
+		// 大きいほうをmaxInt,小さいほうをminIntに代入する
+		maxInt = inputInt1st; // 大きいほう
+		minInt = inputInt2nd; // 小さいほう
 	}
 	else{
 		
-		// �傫���ق���maxInt,�������ق���minInt�ɑ������
-		maxInt = inputIntSecond;
-		minInt = inputIntFirst;
+		// 大きいほうをmaxInt,小さいほうをminIntに代入する
+		maxInt = inputInt2nd; // 大きいほう
+		minInt = inputInt1st; // 小さいほう
 	}
 	
-	// ��O���͒l���A�b��ő�l���傫�����ǂ����̔���
-	if( inputIntThird > maxInt ){
+	// 第三入力値が、暫定最大値より大きいかどうかの判定
+	if( inputInt3rd > maxInt ){
 		
-		// �����ł���΁A�J�艺�����Ďb��ő�l�������l�ɂȂ�
+		// そうであれば、繰り下がって暫定最大値が中央値になる
 		midInt = maxInt;
 	}
 	
-	// ��O���͒l���A�b��ŏ��l��菬�������ǂ����̔���
-	else if( inputIntThird < minInt ){
+	// 第三入力値が、暫定最小値より小さいかどうかの判定
+	else if( inputInt3rd < minInt ){
 		
-		// �����ł���΁A�J��オ���Ďb��ŏ��l�������l�ƂȂ�
+		// そうであれば、繰り上がって暫定最小値が中央値となる
 		midInt = minInt;
 	}
 	
-	// �ǂ�ł��Ȃ��ꍇ
+	// どれでもない場合
 	else{
 		
-		// ���̏ꍇ�A��O���͒l�������l�Ƃ������ƂɂȂ�
-		midInt = inputIntThird;
+		// この場合、第三入力値が中央値ということになる
+		midInt = inputInt3rd;
 	}
 	
-	// ���ʂ��o�͂���
-	cout << "���͒l�̒��ł̒����l�́A" << midInt << "�ł��B\n";
+	// 結果を出力する
+	cout << "入力値の中での中央値は、" << midInt << "です。\n";
 }

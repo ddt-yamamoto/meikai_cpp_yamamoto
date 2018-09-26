@@ -1,40 +1,52 @@
 /*
-�����K2-13
-��̐����l��ǂݍ���ō~��(�傫����)�ɕ��ׂ�����v���O�������쐬����B
+■演習2-13
+二つの整数値を読み込んで降順(大きい順)に並べかえるプログラムを作成せよ。
 */
 
-// ���o�͂������̂ŁA�C���N���[�h
+// 入出力を扱うので、インクルード
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// ���͒l���󂯎�邽�߂̕ϐ��̐錾
-	int inputIntFirst;
-	int inputIntSecond;
+	// 入力値を受け取るための変数の宣言
+	int inputInt1st;
+	int inputInt2nd;
 	
-	// �L�[�{�[�h����̓��͂𑣂��A���͂��ꂽ�l��ϐ��Ɋi�[
-	cout << "�ϐ�a�F";		cin >> inputIntFirst;
-	cout << "�ϐ�b�F";		cin >> inputIntSecond;
+	// キーボードからの入力を促す
+	cout << "変数a：";
 	
-	// �~���ɂ��悤�Ƃ����Ƃ��A����ւ����K�v�Ȃ̂́A��ڂ̒l < ��ڂ̒l �̂Ƃ�
-	if( inputIntFirst < inputIntSecond ){
+	// 入力された値を変数に格納
+	cin >> inputInt1st;
+	
+	// キーボードからの入力を促す
+	cout << "変数b：";
+	
+	// 入力された値を変数に格納
+	cin >> inputInt2nd;
+	
+	// 降順にしようとしたとき、入れ替えが必要なのは、一つ目の値 < 二つ目の値 のとき
+	if( inputInt1st < inputInt2nd ){
 		
-		// ����ւ��̂��߂̕ۊǗp�ϐ���錾����ڂ̓��͒l�ŏ�����
-		int tempInt		= inputIntFirst;
+		// 入れ替えのための保管用変数を宣言し一つ目の入力値で初期化
+		int tempInt = inputInt1st;
 		
-		// ��ڂ̓��͒l���A��ڂ̓��͒l�ɑ��
-		inputIntFirst	= inputIntSecond;
+		// 二つ目の入力値を、一つ目の入力値に代入
+		inputInt1st = inputInt2nd;
 		
-		// �ۊǂ��Ă�������ڂ̓��͒l���A��ڂ̓��͒l�ɑ���A����œ���ւ�������
-		inputIntSecond	= tempInt;
+		// 保管してあった一つ目の入力値を、二つ目の入力値に代入、これで入れ替えが完了
+		inputInt2nd = tempInt;
 	}
 	
-	// ���g�����ւ������߁A���b�Z�[�W�̏o�͏��́A�~����First��Second�ŌŒ�
-	cout << "a��b�ƂȂ�悤�Ƀ\�[�g���܂����B\n";
-	cout << "�ϐ�a��" << inputIntFirst << "�ł��B\n";
-	cout << "�ϐ�b��" << inputIntSecond << "�ł��B\n";
+	// 中身を入れ替えたため、メッセージの出力順は、降順に1st⇒2ndで固定
+	cout << "a≧bとなるようにソートしました。\n";
+	
+	// メッセージを出力
+	cout << "変数aは" << inputInt1st << "です。\n";
+	
+	// メッセージを出力
+	cout << "変数bは" << inputInt2nd << "です。\n";
 }

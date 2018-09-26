@@ -1,54 +1,54 @@
 /*
-�����K2-5
-���̐����l��ǂݍ���ŁA�����3�Ŋ������l�ɉ�����
-�w���̒l��3�Ŋ���؂�܂��B�x�w���̒l��3�Ŋ�������]��1�ł��B�x�w���̒l��3�Ŋ�������]��2�ł��B�x
-�̂����ꂩ��\������v���O�������쐬����B
-�����łȂ��l��ǂݍ��񂾏ꍇ�́A�w���łȂ��l�����͂���܂����B�x�ƕ\�����邱�ƁB
+■演習2-5
+正の整数値を読み込んで、それを3で割った値に応じて
+『その値は3で割り切れます。』『その値を3で割った剰余は1です。』『その値を3で割った剰余は2です。』
+のいずれかを表示するプログラムを作成せよ。
+※正でない値を読み込んだ場合は、『正でない値が入力されました。』と表示すること。
 */
 
-// ���o�̓��C�u�����̎�荞��
+// 入出力ライブラリの取り込み
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// ���͒l���󂯎�邽�߂̕ϐ��̐錾
-	int inputIntFirst;
+	// 入力値を受け取るための変数の宣言
+	int inputInt1st;
 	
-	// �L�[�{�[�h����̓��͂𑣂�
-	cout << "���肷�鐳�̐�������́F";
+	// キーボードからの入力を促す
+	cout << "判定する正の整数を入力：";
 	
-	// ���͂��ꂽ�l��ϐ��Ɋi�[
-	cin >> inputIntFirst;
+	// 入力された値を変数に格納
+	cin >> inputInt1st;
 	
-	// �l�����ł��邱�Ƃ��Ƀ`�F�b�N����
-	if( inputIntFirst <= 0 ){
+	// 値が正であることを先にチェックする
+	if( inputInt1st <= 0 ){
 		
-		// ���茋�ʂ��o��
-		cout << "���łȂ��l�����͂���܂����B\n";
+		// 判定結果を出力
+		cout << "正でない値が入力されました。\n";
 	}
 	
-	// 3�Ŋ���؂��ꍇ
-	else if( inputIntFirst % 3 == 0 ){
+	// 3で割り切れる場合
+	else if( inputInt1st % 3 == 0 ){
 		
-		// ���茋�ʂ��o��
-		cout << "���̒l��3�Ŋ���؂�܂��B\n";
+		// 判定結果を出力
+		cout << "その値は3で割り切れます。\n";
 	}
 	
-	// 3�Ŋ�������]��1�ł���ꍇ
-	else if( inputIntFirst % 3 == 1 ){
+	// 3で割った剰余が1である場合
+	else if( inputInt1st % 3 == 1 ){
 		
-		// ���茋�ʂ��o��
-		cout << "���̒l��3�Ŋ�������]��1�ł��B\n";
+		// 判定結果を出力
+		cout << "その値を3で割った剰余は1です。\n";
 	}
 	
-	// 3�Ŋ�������]��2�ł���ꍇ
-	else if( inputIntFirst % 3 == 2 ){
+	// 3で割った剰余が2である場合
+	else if( inputInt1st % 3 == 2 ){
 		
-		// ���茋�ʂ��o��
-		cout << "���̒l��3�Ŋ�������]��2�ł��B\n";
+		// 判定結果を出力
+		cout << "その値を3で割った剰余は2です。\n";
 	}
 }

@@ -1,47 +1,50 @@
 /*
-�����K2-16
-����1�`12�̐����l�Ƃ��ēǂݍ���ŁA����ɑΉ�����G�߂�\������v���O�������쐬����B
-��switch����p���Ď������邱�ƁB
+■演習2-16
+月を1〜12の整数値として読み込んで、それに対応する季節を表示するプログラムを作成せよ。
+※switch文を用いて実現すること。
 */
 
-// ���o�͂������̂ŁA�C���N���[�h
+// 入出力を扱うので、インクルード
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// ���͂���錎���i�[����ϐ���錾
+	// 入力される月を格納する変数を宣言
 	int inputMonth;
 	
-	// �L�[�{�[�h����̓��͂𑣂��A���͂��ꂽ�l��ϐ��Ɋi�[
-	cout << "�G�߂𔻒肷�錎�F";	cin >> inputMonth;
+	// キーボードからの入力を促す
+	cout << "季節を判定する月：";
 	
-	// inputMonth�̒l�ɉ����āAswitch����p���ď����𕪊򂳂���
+	// 入力された値を変数に格納
+	cin >> inputMonth;
+	
+	// inputMonthの値に応じて、switch文を用いて処理を分岐させる
 	switch(inputMonth){
-		case 3	:				// 3���̂Ƃ�
-		case 4	:				// 4���̂Ƃ�
-		case 5	:				// 5���̂Ƃ�
-			cout << "�t\n";		// ���b�Z�[�W���o��
-			break;				// switch���𔲂���
-		case 6	:				// 6���̂Ƃ�
-		case 7	:				// 7���̂Ƃ�
-		case 8	:				// 8���̂Ƃ�
-			cout << "��\n";		// ���b�Z�[�W���o��
-			break;				// switch���𔲂���
-		case 9	:				// 9���̂Ƃ�
-		case 10	:				// 10���̂Ƃ�
-		case 11	:				// 11���̂Ƃ�
-			cout << "�H\n";		// ���b�Z�[�W���o��
-			break;				// switch���𔲂���
-		case 12	:				// 12���̂Ƃ�
-		case 1	:				// 1���̂Ƃ�
-		case 2	:				// 2���̂Ƃ�
-			cout << "�~\n";		// ���b�Z�[�W���o��
-			break;				// switch���𔲂���
-		default	:				// �O�̂��߂̕⑫�p
-			break;				// switch���𔲂���
+	case 3 :            // 3月のとき
+	case 4 :            // 4月のとき
+	case 5 :            // 5月のとき
+		cout << "春\n"; // メッセージを出力
+		break;          // switch文を抜ける
+	case 6 :            // 6月のとき
+	case 7 :            // 7月のとき
+	case 8 :            // 8月のとき
+		cout << "夏\n"; // メッセージを出力
+		break;          // switch文を抜ける
+	case 9 :            // 9月のとき
+	case 10:            // 10月のとき
+	case 11:            // 11月のとき
+		cout << "秋\n"; // メッセージを出力
+		break;          // switch文を抜ける
+	case 12:            // 12月のとき
+	case 1 :            // 1月のとき
+	case 2 :            // 2月のとき
+		cout << "冬\n"; // メッセージを出力
+		break;          // switch文を抜ける
+	default:            // 念のための補足用
+		break;          // switch文を抜ける
 	}
 }

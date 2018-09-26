@@ -1,35 +1,36 @@
 /*
-¡‰‰K2-7
-“ñ‚Â‚ÌÀ”’l‚ğ“Ç‚İ‚ñ‚ÅA‘å‚«‚¢‚Ù‚¤‚Ì’l‚ğ•\¦‚·‚éƒvƒƒOƒ‰ƒ€‚ğì¬‚¹‚æB
+â– æ¼”ç¿’2-7
+äºŒã¤ã®å®Ÿæ•°å€¤ã‚’èª­ã¿è¾¼ã‚“ã§ã€å¤§ãã„ã»ã†ã®å€¤ã‚’è¡¨ç¤ºã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã›ã‚ˆã€‚
 */
 
-// “üo—Íƒ‰ƒCƒuƒ‰ƒŠ‚Ìæ‚è‚İ
+// å…¥å‡ºåŠ›ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å–ã‚Šè¾¼ã¿
 #include <iostream>
 
-// –¼‘O‹óŠÔstd‚Ì—˜—péŒ¾
+// åå‰ç©ºé–“stdã®åˆ©ç”¨å®£è¨€
 using namespace std;
 
-// mainŠÖ”‚Ì’è‹`
+// mainé–¢æ•°ã®å®šç¾©
 int main(){
 	
-	// “ü—Í’l‚ğó‚¯æ‚é‚½‚ß‚Ì•Ï”‚ÌéŒ¾
-	double inputDoubleFirst;
-	double inputDoubleSecond;
+	// å…¥åŠ›å€¤ã‚’å—ã‘å–ã‚‹ãŸã‚ã®å¤‰æ•°ã®å®£è¨€
+	double inputDouble1st; // å®Ÿæ•°å€¤a
+	double inputDouble2nd; // å®Ÿæ•°å€¤b
 	
-	// ƒL[ƒ{[ƒh‚©‚ç‚Ì“ü—Í‚ğ‘£‚·
-	cout << "À”’la‚ğ“ü—ÍF";
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ã®å…¥åŠ›ã‚’ä¿ƒã™
+	cout << "å®Ÿæ•°å€¤aã‚’å…¥åŠ›ï¼š";
 	
-	// “ü—Í‚³‚ê‚½’l‚ğ•Ï”‚ÉŠi”[
-	cin >> inputDoubleFirst;
+	// å…¥åŠ›ã•ã‚ŒãŸå€¤ã‚’å¤‰æ•°ã«æ ¼ç´
+	cin >> inputDouble1st;
 	
-	// ƒL[ƒ{[ƒh‚©‚ç‚Ì“ü—Í‚ğ‘£‚·
-	cout << "À”’lb‚ğ“ü—ÍF";
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ã®å…¥åŠ›ã‚’ä¿ƒã™
+	cout << "å®Ÿæ•°å€¤bã‚’å…¥åŠ›ï¼š";
 	
-	// “ü—Í‚³‚ê‚½’l‚ğ•Ï”‚ÉŠi”[
-	cin >> inputDoubleSecond;
+	// å…¥åŠ›ã•ã‚ŒãŸå€¤ã‚’å¤‰æ•°ã«æ ¼ç´
+	cin >> inputDouble2nd;
 	
-	// ğŒ‰‰Zq‚ğ—p‚¢‚ÄAa‚Æb‚Ì‘å‚«‚¢‚Ù‚¤‚Ì’l‚Å•Ï”maxDouble‚ğ‰Šú‰»
-	double maxDouble = inputDoubleFirst > inputDoubleSecond ? inputDoubleFirst : inputDoubleSecond;
+	// æ¡ä»¶æ¼”ç®—å­ã‚’ç”¨ã„ã¦ã€aã¨bã®å¤§ãã„ã»ã†ã®å€¤ã§å¤‰æ•°maxDoubleã‚’åˆæœŸåŒ–
+	double maxDouble = inputDouble1st > inputDouble2nd ? inputDouble1st : inputDouble2nd;
 	
-	cout << "‘å‚«‚¢‚Ù‚¤‚ÌÀ”‚Í" << maxDouble << "‚Å‚·B\n";
+	// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡ºåŠ›
+	cout << "å¤§ãã„ã»ã†ã®å®Ÿæ•°ã¯" << maxDouble << "ã§ã™ã€‚\n";
 }

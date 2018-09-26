@@ -1,56 +1,64 @@
 /*
-�����K2-12
-List2-13�Ɠ��l�ɁA��̐����l��ǂݍ���ŁA�������ق��̒l�Ƒ傫���ق��̒l�̗�����\������v���O�������쐬����B
-�������A��̐����l���������ꍇ�́A�E�Ɏ����悤�Ɂw��̒l�͓����ł��B�x�ƕ\�����邱�ƁB
+■演習2-12
+List2-13と同様に、二つの整数値を読み込んで、小さいほうの値と大きいほうの値の両方を表示するプログラムを作成せよ。
+ただし、二つの整数値が等しい場合は、右に示すように『二つの値は同じです。』と表示すること。
 */
 
-// ���o�͂������̂ŁA�C���N���[�h
+// 入出力を扱うので、インクルード
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// ���͒l���󂯎�邽�߂̕ϐ��̐錾
-	int inputIntFirst;
-	int inputIntSecond;
+	// 入力値を受け取るための変数の宣言
+	int inputInt1st; // 整数a
+	int inputInt2nd; // 整数b
 	
-	// �L�[�{�[�h����̓��͂𑣂��A���͂��ꂽ�l��ϐ��Ɋi�[
-	cout << "����a�F";		cin >> inputIntFirst;
-	cout << "����b�F";		cin >> inputIntSecond;
+	// キーボードからの入力を促す
+	cout << "整数a：";
 	
-	// ���b�Z�[�W���قȂ�̂ŁA��l�������ꍇ���ɔ��肵�ď����Ă���
-	if( inputIntFirst == inputIntSecond ){
-		cout << "��̒l�͓����ł��B\n";
+	// 入力された値を変数に格納
+	cin >> inputInt1st;
+	
+	// キーボードからの入力を促す
+	cout << "整数b：";
+	
+	// 入力された値を変数に格納
+	cin >> inputInt2nd;
+	
+	// メッセージが異なるので、二値が同じ場合を先に判定して除いておく
+	if( inputInt1st == inputInt2nd ){
+		cout << "二つの値は同じです。\n";
 	}
 	
-	// ��l�������łȂ��ꍇ
+	// 二値が同じでない場合
 	else{
 		
-		// �ő�l�A�ŏ��l������ϐ������ꂼ��錾����
-		int maxInt;
-		int minInt;
+		// 最大値、最小値を入れる変数をそれぞれ宣言する
+		int maxInt; // 最大値
+		int minInt; // 最小値
 		
-		// �����͒l�̂ق����傫���ꍇ
-		if( inputIntFirst > inputIntSecond ){
+		// 第一入力値のほうが大きい場合
+		if( inputInt1st > inputInt2nd ){
 		
-			// �傫���ق���maxInt,�������ق���minInt�ɑ������
-			maxInt = inputIntFirst;
-			minInt = inputIntSecond;
+			// 大きいほうをmaxInt,小さいほうをminIntに代入する
+			maxInt = inputInt1st; // 大きいほう
+			minInt = inputInt2nd; // 小さいほう
 		}
 		
-		// �����͒l�̂ق����傫���ꍇ
+		// 第二入力値のほうが大きい場合
 		else{
 		
-			// �傫���ق���maxInt,�������ق���minInt�ɑ������
-			maxInt = inputIntSecond;
-			minInt = inputIntFirst;
+			// 大きいほうをmaxInt,小さいほうをminIntに代入する
+			maxInt = inputInt2nd; // 大きいほう
+			minInt = inputInt1st; // 小さいほう
 		}
 	
-		// ���ʂ��o�͂���
-		cout << "�������ق��̒l�F" << minInt << "\n"
-			 << "�傫���ق��̒l�F" << maxInt << "\n";
+		// 結果を出力する
+		cout << "小さいほうの値：" << minInt << "\n"
+			 << "大きいほうの値：" << maxInt << "\n";
 	}
 }
