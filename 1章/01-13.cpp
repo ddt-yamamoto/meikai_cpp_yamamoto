@@ -1,36 +1,36 @@
 /*
-¡‰‰K1-13
-ˆÈ‰º‚ÉŽ¦‚·ƒvƒƒOƒ‰ƒ€‚ðì¬‚¹‚æB
-E1Œ…‚Ì³‚Ì®”’l(‚·‚È‚í‚¿ 1ˆÈã 9ˆÈ‰º‚Ì’l)‚ðƒ‰ƒ“ƒ_ƒ€‚É¶¬‚µ‚Ä•\Ž¦B
-E1Œ…‚Ì•‰‚Ì®”’l(‚·‚È‚í‚¿-9ˆÈã-1ˆÈ‰º‚Ì’l)‚ðƒ‰ƒ“ƒ_ƒ€‚É¶¬‚µ‚Ä•\Ž¦B
-E2Œ…‚Ì³‚Ì®”’l(‚·‚È‚í‚¿10ˆÈã99ˆÈ‰º‚Ì’l)‚ðƒ‰ƒ“ƒ_ƒ€‚É¶¬‚µ‚Ä•\Ž¦B
+â– æ¼”ç¿’1-13
+ä»¥ä¸‹ã«ç¤ºã™ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã›ã‚ˆã€‚
+ãƒ»1æ¡ã®æ­£ã®æ•´æ•°å€¤(ã™ãªã‚ã¡ 1ä»¥ä¸Š 9ä»¥ä¸‹ã®å€¤)ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«ç”Ÿæˆã—ã¦è¡¨ç¤ºã€‚
+ãƒ»1æ¡ã®è² ã®æ•´æ•°å€¤(ã™ãªã‚ã¡-9ä»¥ä¸Š-1ä»¥ä¸‹ã®å€¤)ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«ç”Ÿæˆã—ã¦è¡¨ç¤ºã€‚
+ãƒ»2æ¡ã®æ­£ã®æ•´æ•°å€¤(ã™ãªã‚ã¡10ä»¥ä¸Š99ä»¥ä¸‹ã®å€¤)ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«ç”Ÿæˆã—ã¦è¡¨ç¤ºã€‚
 */
 
-// Ží‚É‚·‚é‚½‚ß‚Ì“úŽž‚É‚©‚©‚í‚éƒ‰ƒCƒuƒ‰ƒŠ‚ÆAƒ‰ƒ“ƒ_ƒ€ŠÖ”‚Ì‚ ‚é•W€ƒ‰ƒCƒuƒ‰ƒŠA“üo—Íƒ‰ƒCƒuƒ‰ƒŠ‚ÌŽæ‚èž‚Ý
+// ç¨®ã«ã™ã‚‹ãŸã‚ã®æ—¥æ™‚ã«ã‹ã‹ã‚ã‚‹ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¨ã€ãƒ©ãƒ³ãƒ€ãƒ é–¢æ•°ã®ã‚ã‚‹æ¨™æº–ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã€å…¥å‡ºåŠ›ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å–ã‚Šè¾¼ã¿
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
 
-// –¼‘O‹óŠÔstd‚Ì—˜—péŒ¾
+// åå‰ç©ºé–“stdã®åˆ©ç”¨å®£è¨€
 using namespace std;
 
-// mainŠÖ”‚Ì’è‹`
+// mainé–¢æ•°ã®å®šç¾©
 int main(){
 	
-	// —”‚ÌŽí‚É“úŽž‚ðŽg‚Á‚ÄÝ’è
+	// ä¹±æ•°ã®ç¨®ã«æ—¥æ™‚ã‚’ä½¿ã£ã¦è¨­å®š
 	srand(time(NULL));
 	
-	// 1`9‚Ì—”‚ð¶¬‚µA‚»‚ê‚Åint•Ï”‚ð‰Šú‰»
-	int randOneDigitPlus	=		rand() % 9 + 1;
+	// 1ã€œ9ã®ä¹±æ•°ã‚’ç”Ÿæˆã—ã€ãã‚Œã§intå¤‰æ•°ã‚’åˆæœŸåŒ–
+	int randOneDigitPlus  =     rand() % 9 + 1;
 	
-	// -9`-1‚Ì—”‚ð¶¬‚µA‚»‚ê‚Åint•Ï”‚ð‰Šú‰»
-	int randOneDigitMinus	= - (	rand() % 9 + 1 );
+	// -9ã€œ-1ã®ä¹±æ•°ã‚’ç”Ÿæˆã—ã€ãã‚Œã§intå¤‰æ•°ã‚’åˆæœŸåŒ–
+	int randOneDigitMinus = - ( rand() % 9 + 1 );
 	
-	// 10`99‚Ì—”‚ð¶¬‚µA‚»‚ê‚Åint•Ï”‚ð‰Šú‰»
-	int randTwoDigitPlus	=		rand() % 90 + 10;
+	// 10ã€œ99ã®ä¹±æ•°ã‚’ç”Ÿæˆã—ã€ãã‚Œã§intå¤‰æ•°ã‚’åˆæœŸåŒ–
+	int randTwoDigitPlus  =     rand() % 90 + 10;
 	
-	// Še—”‚ð•W€o—Í
-	cout << "1Œ…‚Ì³‚Ì®”’lF" << randOneDigitPlus		<< "\n";
-	cout << "1Œ…‚Ì•‰‚Ì®”’lF" << randOneDigitMinus	<< "\n";
-	cout << "2Œ…‚Ì³‚Ì®”’lF" << randTwoDigitPlus		<< "\n";
+	// å„ä¹±æ•°ã‚’æ¨™æº–å‡ºåŠ›
+	cout << "1æ¡ã®æ­£ã®æ•´æ•°å€¤ï¼š" << randOneDigitPlus  << "\n";
+	cout << "1æ¡ã®è² ã®æ•´æ•°å€¤ï¼š" << randOneDigitMinus << "\n";
+	cout << "2æ¡ã®æ­£ã®æ•´æ•°å€¤ï¼š" << randTwoDigitPlus  << "\n";
 }

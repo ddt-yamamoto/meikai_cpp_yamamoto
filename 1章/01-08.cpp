@@ -1,30 +1,30 @@
 /*
-�����K1-8
-int�^�̕ϐ��Ɏ����l�̏������q��^����Ƃǂ��Ȃ邩�B�v���O�������쐬���Ċm�F����B
+■演習1-8
+int型の変数に実数値の初期化子を与えるとどうなるか。プログラムを作成して確認せよ。
 */
 
-// ���o�̓��C�u�����̎�荞��
+// 入出力ライブラリの取り込み
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// firstInt�Ɏ����l�̏������q��^���ď�����
-	int firstInt	= 10;
+	// firstIntに実数値の初期化子を与えて初期化
+	int firstInt  = 10;
 	
-	// secondInt�Ɏ����l�̏������q��^���ď������A���߂��ɏ��������������l�ɂ���
-	int secondInt	= 12.5;
+	// secondIntに実数値の初期化子を与えて初期化、ためしに小数部を持った値にした
+	int secondInt = 12.5;
 	
-	// �W���o�̓X�g���[���ɕ�����ƕϐ��𑱂��đ}��
-	cout << "firstInt�̒l��"	<< firstInt		<< "�ł��B\n";
-	cout << "secondInt�̒l��"	<< secondInt	<< "�ł��B\n";
+	// 標準出力ストリームに文字列と変数を続けて挿入
+	cout << "firstIntの値は"  << firstInt  << "です。\n";
+	cout << "secondIntの値は" << secondInt << "です。\n";
 }
 
 /*
-������
-�����ς݂̕ϐ��ɒl���������Ƃ��Ɠ������ʂ𓾂��B
-secondInt�͐����ł͂Ȃ����A�G���[�ɂ͂Ȃ炸�؂�̂Ă���12�ƂȂ����B
+■注釈
+生成済みの変数に値を代入したときと同じ結果を得た。
+secondIntは整数ではないが、エラーにはならず切り捨てられて12となった。
 */

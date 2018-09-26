@@ -1,38 +1,38 @@
 /*
-��List1-7�̃v���O������ύX���āA���������������l��x��y�ɑ������v���O�������쐬����B
-���̎��s���ʂ���Aint�^�ϐ��������l�݂̂��������Ȃ����Ƃ��m�F���邱�ƁB
+■List1-7のプログラムを変更して、小数部をもつ実数値をxやyに代入するプログラムを作成せよ。
+その実行結果から、int型変数が整数値のみしか扱えないことを確認すること。
 */
 
-// ���o�̓��C�u�����𗘗p����
+// 入出力ライブラリを利用する
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// int�^�ϐ���2�錾
+	// int型変数を2つ宣言
 	int firstInt;
 	int secondInt;
 	
-	// ���K�Ƃ��āAint�^�ϐ��ɑ΂��A���������������l��������
-	firstInt	= 63.1;
-	secondInt	= 18.9;
+	// 演習として、int型変数に対し、少数部を持つ実数値を代入する
+	firstInt  = 63.1;
+	secondInt = 18.9;
 	
-	// �W���o�̓X�g���[���ɑ΂��āA������ƕϐ���}�����Ă���
-	cout << "x�̒l��" << firstInt	<< "�ł��B\n";
-	cout << "y�̒l��" << secondInt	<< "�ł��B\n";
+	// 標準出力ストリームに対して、文字列と変数を挿入していく
+	cout << "xの値は" << firstInt  << "です。\n";
+	cout << "yの値は" << secondInt << "です。\n";
 	
-	// �ϐ������Z�q�ɂ���ĉ��H���邱�Ƃ��ł���
-	cout << "���v��" <<   firstInt + secondInt			<< "�ł��B\n";
-	cout << "���ς�" << ( firstInt + secondInt ) / 2	<< "�ł��B\n";
+	// 変数を演算子によって加工することもできる
+	cout << "合計は" <<   firstInt + secondInt       << "です。\n";
+	cout << "平均は" << ( firstInt + secondInt ) / 2 << "です。\n";
 }
 
 /*
-������
-�o�͌��ʂ́A����63,18,81,40�ƂȂ�B
-firstInt��secondInt�̏��������؂�̂Ă��Ă��邱�Ƃ��m�F�B
-���v�͏����𔽉f�����82�ƂȂ邪�A81�ƂȂ��Ă��邱�Ƃ��m�F�B
-�؂�̂Č�ɕ��ς��Ƃ��40.5�ƂȂ邪�A�����40�ƂȂ邱�Ƃ��m�F�B
+■注釈
+出力結果は、順に63,18,81,40となる。
+firstIntとsecondIntの小数部が切り捨てられていることを確認。
+合計は少数を反映すれば82となるが、81となっていることを確認。
+切り捨て後に平均をとると40.5となるが、これも40となることを確認。
 */

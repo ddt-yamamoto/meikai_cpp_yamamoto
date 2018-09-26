@@ -1,33 +1,33 @@
 /*
-�����K1-11
-�E�Ɏ����悤�ɁA��̎����l��ǂݍ��݁A
-���̍��v�ƕ��ς����߂ĕ\������v���O�������쐬����B
+■演習1-11
+右に示すように、二つの実数値を読み込み、
+その合計と平均を求めて表示するプログラムを作成せよ。
 */
 
-// ���o�̓��C�u�����̎�荞��
+// 入出力ライブラリの取り込み
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// �W�����͂�������l���󂯎�邽�߂�double�^�ϐ���錾
+	// 標準入力から実数値を受け取るためにdouble型変数を宣言
 	double firstInputDouble;
 	double secondInputDouble;
 	
-	// �L�[�{�[�h����̕W�����͂𑣂�
-	cout << "firstInputDouble�̒l�F";
+	// キーボードからの標準入力を促す
+	cout << "firstInputDoubleの値：";
 	
-	// �W�����̓X�g���[�����璊�o�q���g���Ēl�����o���A�����double�^�ϐ���firstInputDouble�Ɋi�[
+	// 標準入力ストリームから抽出子を使って値を取り出し、それをdouble型変数のfirstInputDoubleに格納
 	cin >> firstInputDouble;
 	
-	// �����āAsecondInputDouble�ɂ��Ă����l�ɕW�����͂���l���󂯎���Ċi�[����
-	cout << "secondInputDouble�̒l�F";
+	// 続けて、secondInputDoubleについても同様に標準入力から値を受け取って格納する
+	cout << "secondInputDoubleの値：";
 	cin >> secondInputDouble;
 	
-	// ���Z���s���A���ʂ�W���o�̓X�g���[���ɑ}��
-	cout << "���v��" <<   firstInputDouble + secondInputDouble       << "�ł��B\n";
-	cout << "���ς�" << ( firstInputDouble + secondInputDouble ) / 2 << "�ł��B\n";
+	// 演算を行い、結果を標準出力ストリームに挿入
+	cout << "合計は" <<   firstInputDouble + secondInputDouble       << "です。\n";
+	cout << "平均は" << ( firstInputDouble + secondInputDouble ) / 2 << "です。\n";
 }

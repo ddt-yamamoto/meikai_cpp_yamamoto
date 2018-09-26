@@ -1,18 +1,18 @@
 /*
-�����K1-4
-�E�Ɏ����悤�ɁA1�s��1���������O��\������v���O�������쐬����B
-�\������̂́A���҂̖��O�ł͂Ȃ��A�����̖��O�Ƃ��邱�ƁB
+■演習1-4
+右に示すように、1行に1文字ずつ名前を表示するプログラムを作成せよ。
+表示するのは、著者の名前ではなく、自分の名前とすること。
 */
 
-// iostream���C�u�����̎�荞��
+// iostreamライブラリの取り込み
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 
-	// �c�ɕ\�����邽�߁A1�������Ƃɉ��s�R�[�h������ŁA�W���o�̓X�g���[���ɕ������}��
-	cout << "�R\n�{\n��\n��\n";
+	// 縦に表示するため、1文字ごとに改行コードを挟んで、標準出力ストリームに文字列を挿入
+	cout << "山\n本\n健\n太\n";
 }

@@ -1,28 +1,28 @@
 /*
-�����K1-7
-�O��int�^�ϐ��ɒl�������A�����̍��v�ƕ��ς����߂�v���O�������쐬����B
+■演習1-7
+三つのint型変数に値を代入し、それらの合計と平均を求めるプログラムを作成せよ。
 */
 
-// ���o�̓��C�u��������荞��
+// 入出力ライブラリを取り込む
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	//int�^�ϐ���3�錾
+	//int型変数を3つ宣言
 	int firstInt;
 	int secondInt;
 	int thirdInt;
 	
-	// ���ꂼ��̕ϐ��ɐ����l����
-	firstInt	= 10;
-	secondInt	= 100;
-	thirdInt	= 1000;
+	// それぞれの変数に整数値を代入
+	firstInt  = 10;
+	secondInt = 100;
+	thirdInt  = 1000;
 	
-	// ���v����ѕ��ς̉��Z���s���A�W���o�̓X�g���[���ɕ�����ƒl�𑱂��đ}��
-	cout << "���v��" <<   firstInt + secondInt + thirdInt		<< "�ł��B\n";
-	cout << "���ς�" << ( firstInt + secondInt + thirdInt ) / 3	<< "�ł��B\n";
+	// 合計および平均の演算を行い、標準出力ストリームに文字列と値を続けて挿入
+	cout << "合計は" <<   firstInt + secondInt + thirdInt       << "です。\n";
+	cout << "平均は" << ( firstInt + secondInt + thirdInt ) / 3 << "です。\n";
 }

@@ -1,28 +1,28 @@
 /*
-¡‰‰K1-10
-‰E‚ÉŽ¦‚·‚æ‚¤‚ÉAƒL[ƒ{[ƒh‚©‚ç“Ç‚Ýž‚ñ‚¾®”’l‚É
-10‚ð‰Á‚¦‚½’l‚Æ10‚ðŒ¸‚¶‚½’l‚ðo—Í‚·‚éƒvƒƒOƒ‰ƒ€‚ðì¬‚¹‚æB
+â– æ¼”ç¿’1-10
+å³ã«ç¤ºã™ã‚ˆã†ã«ã€ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰èª­ã¿è¾¼ã‚“ã æ•´æ•°å€¤ã«
+10ã‚’åŠ ãˆãŸå€¤ã¨10ã‚’æ¸›ã˜ãŸå€¤ã‚’å‡ºåŠ›ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã›ã‚ˆã€‚
 */
 
-// “üo—Íƒ‰ƒCƒuƒ‰ƒŠ‚ÌŽæ‚èž‚Ý
+// å…¥å‡ºåŠ›ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®å–ã‚Šè¾¼ã¿
 #include <iostream>
 
-// –¼‘O‹óŠÔstd‚Ì—˜—péŒ¾
+// åå‰ç©ºé–“stdã®åˆ©ç”¨å®£è¨€
 using namespace std;
 
-// mainŠÖ”‚Ì’è‹`
+// mainé–¢æ•°ã®å®šç¾©
 int main(){
 	
-	// •W€“ü—Í‚ðŽó‚¯Žæ‚é‚½‚ß‚ÌintŒ^•Ï”‚ÌéŒ¾
+	// æ¨™æº–å…¥åŠ›ã‚’å—ã‘å–ã‚‹ãŸã‚ã®intåž‹å¤‰æ•°ã®å®£è¨€
 	int firstInputInt;
 	
-	// ƒL[ƒ{[ƒh‚©‚ç‚Ì•W€“ü—Í‚ð‘£‚·
-	cout << "®”’lF";
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ã®æ¨™æº–å…¥åŠ›ã‚’ä¿ƒã™
+	cout << "æ•´æ•°å€¤ï¼š";
 	
-	// •W€“ü—ÍƒXƒgƒŠ[ƒ€‚©‚ç’ŠoŽq‚ðŽg‚Á‚Ä’l‚ðŽæ‚èo‚µA‚»‚ê‚ðintŒ^•Ï”‚ÌfirstInputInt‚ÉŠi”[
+	// æ¨™æº–å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‹ã‚‰æŠ½å‡ºå­ã‚’ä½¿ã£ã¦å€¤ã‚’å–ã‚Šå‡ºã—ã€ãã‚Œã‚’intåž‹å¤‰æ•°ã®firstInputIntã«æ ¼ç´
 	cin >> firstInputInt;
 	
-	// ‰‰ŽZŒ‹‰Ê‚ð•W€o—ÍƒXƒgƒŠ[ƒ€‚É‘}“ü
-	cout << "10‚ð‰Á‚¦‚½’l‚Í" << firstInputInt + 10 << "‚Å‚·B\n";
-	cout << "10‚ðŒ¸‚¶‚½’l‚Í" << firstInputInt - 10 << "‚Å‚·B\n";
+	// æ¼”ç®—çµæžœã‚’æ¨™æº–å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã«æŒ¿å…¥
+	cout << "10ã‚’åŠ ãˆãŸå€¤ã¯" << firstInputInt + 10 << "ã§ã™ã€‚\n";
+	cout << "10ã‚’æ¸›ã˜ãŸå€¤ã¯" << firstInputInt - 10 << "ã§ã™ã€‚\n";
 }

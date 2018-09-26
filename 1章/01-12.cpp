@@ -1,32 +1,32 @@
 /*
-�����K1-12
-�E�Ɏ����悤�ɁA�O�p�`�̒�ӂƍ�����ǂݍ���ŁA
-���̖ʐς�\������v���O�������쐬����B
+■演習1-12
+右に示すように、三角形の底辺と高さを読み込んで、
+その面積を表示するプログラムを作成せよ。
 */
 
-// ���o�̓��C�u�����̎�荞��
+// 入出力ライブラリの取り込み
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// �W�����͂�������l���󂯎�邽�߂�double�^�ϐ���錾
+	// 標準入力から実数値を受け取るためにdouble型変数を宣言
 	double inputBottomDouble;
 	double inputHeightDouble;
 	
-	// �L�[�{�[�h����̕W�����͂𑣂�
-	cout << "��ӁF";
+	// キーボードからの標準入力を促す
+	cout << "底辺：";
 	
-	// �W�����̓X�g���[�����璊�o�q���g���Ēl�����o���A�����double�^�ϐ���inputBottomDouble�Ɋi�[
+	// 標準入力ストリームから抽出子を使って値を取り出し、それをdouble型変数のinputBottomDoubleに格納
 	cin >> inputBottomDouble;
 	
-	// �����āAinputHeightDouble�ɂ��Ă����l�ɕW�����͂���l���󂯎���Ċi�[����
-	cout << "�����F";
+	// 続けて、inputHeightDoubleについても同様に標準入力から値を受け取って格納する
+	cout << "高さ：";
 	cin >> inputHeightDouble;
 	
-	// ���Z���s���A���ʂ�W���o�̓X�g���[���ɑ}��
-	cout << "���v��" << ( inputBottomDouble * inputHeightDouble ) / 2 << "�ł��B\n";
+	// 演算を行い、結果を標準出力ストリームに挿入
+	cout << "合計は" << ( inputBottomDouble * inputHeightDouble ) / 2 << "です。\n";
 }

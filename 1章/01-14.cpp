@@ -1,35 +1,35 @@
 /*
-�����K1-14
-�L�[�{�[�h����ǂݍ��񂾐����l�v���X�}�C�i�X5�͈̔͂̐����l�������_���ɐ������ĕ\������v���O�������쐬����B
-���L�[�{�[�h����ǂݍ��񂾒l��100�ł���΁A95�`105�̐����l��\�����邱�ƁB
+■演習1-14
+キーボードから読み込んだ整数値プラスマイナス5の範囲の整数値をランダムに生成して表示するプログラムを作成せよ。
+※キーボードから読み込んだ値が100であれば、95〜105の整数値を表示すること。
 */
 
-// ��ɂ��邽�߂̓����ɂ�����郉�C�u�����ƁA�����_���֐��̂���W�����C�u�����A���o�̓��C�u�����̎�荞��
+// 種にするための日時にかかわるライブラリと、ランダム関数のある標準ライブラリ、入出力ライブラリの取り込み
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 	
-	// �����̎�ɓ������g���Đݒ�
+	// 乱数の種に日時を使って設定
 	srand(time(NULL));
 	
-	// -5�`5�̗����𐶐����A�����int�ϐ���������
+	// -5〜5の乱数を生成し、それでint変数を初期化
 	int randIntFirst = rand() % 11 - 5;
 	
-	// �L�[�{�[�h����̓��͒l�̎󂯎��p�ϐ���錾
+	// キーボードからの入力値の受け取り用変数を宣言
 	int inputIntFirst;
 	
-	// �L�[�{�[�h����̐��l���͂𑣂�
-	cout << "�����l�F";
+	// キーボードからの数値入力を促す
+	cout << "整数値：";
 	
-	// �L�[�{�[�h�ɓ��͂��ꂽ�l�𒊏o�q���g���ĕϐ��Ɋi�[
+	// キーボードに入力された値を抽出子を使って変数に格納
 	cin >> inputIntFirst;
 	
-	// ���͒l�ƃ����_���̕ω��������Z���A�W���o�͂���
-	cout << "���̒l�́}5�̗����𐶐����܂����B�����" << inputIntFirst + randIntFirst << "�ł��B\n";
+	// 入力値とランダムの変化幅を加算し、標準出力する
+	cout << "その値の±5の乱数を生成しました。それは" << inputIntFirst + randIntFirst << "です。\n";
 }

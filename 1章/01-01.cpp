@@ -1,26 +1,26 @@
 /*
-�����K1-1
-�w�b�_<iostream>���C���N���[�h����w�߂����@���Ă���ƁA�ǂ��Ȃ�ł��낤���B
-�v���O�������R���p�C�����Č��؂���B
+■演習1-1
+ヘッダ<iostream>をインクルードする指令が欠如していると、どうなるであろうか。
+プログラムをコンパイルして検証せよ。
 */
 
-// iostream�̓��e����荞�ނ��A���K�ۑ�Ƃ��Ă͂������R�����g�A�E�g
+// iostreamの内容を取り込むが、演習課題としてはここをコメントアウト
 #include <iostream>
 
-// ���O���std�̗��p�錾
+// 名前空間stdの利用宣言
 using namespace std;
 
-// main�֐��̒�`
+// main関数の定義
 int main(){
 
-	// �W���o�̓X�g���[���ɕ������}��
-	cout << "���߂Ă�C++�v���O�����B\n";
+	// 標準出力ストリームに文字列を挿入
+	cout << "初めてのC++プログラム。\n";
 
-	// �����āA�W���o�̓X�g���[���ɕ������ǉ��}��
-	cout << "��ʂɏo�͂��Ă��܂��B\n";
+	// 続けて、標準出力ストリームに文字列を追加挿入
+	cout << "画面に出力しています。\n";
 }
 
 /*
-������
-include�����ł̓R���p�C���G���[���o�邱�Ƃ��m�F�ς�
+■注釈
+include無しではコンパイルエラーが出ることを確認済み
 */
