@@ -14,8 +14,8 @@ using namespace std;
 int main(){
 	
 	// 標準入力から実数値を受け取るためにdouble型変数を宣言
-	double firstInputDouble;
-	double secondInputDouble;
+	double firstInputDouble;  // 一つ目の実数
+	double secondInputDouble; // 二つ目の実数
 	
 	// キーボードからの標準入力を促す
 	cout << "firstInputDoubleの値：";
@@ -24,10 +24,15 @@ int main(){
 	cin >> firstInputDouble;
 	
 	// 続けて、secondInputDoubleについても同様に標準入力から値を受け取って格納する
+	// 入力を促すメッセージ
 	cout << "secondInputDoubleの値：";
+	
+	// 値を格納
 	cin >> secondInputDouble;
 	
 	// 演算を行い、結果を標準出力ストリームに挿入
 	cout << "合計は" <<   firstInputDouble + secondInputDouble       << "です。\n";
+	
+	// 演算を行い、結果を標準出力ストリームに挿入
 	cout << "平均は" << ( firstInputDouble + secondInputDouble ) / 2 << "です。\n";
 }

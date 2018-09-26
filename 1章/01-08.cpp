@@ -20,6 +20,8 @@ int main(){
 	
 	// 標準出力ストリームに文字列と変数を続けて挿入
 	cout << "firstIntの値は"  << firstInt  << "です。\n";
+	
+	// 標準出力ストリームに文字列と変数を続けて挿入
 	cout << "secondIntの値は" << secondInt << "です。\n";
 }
 

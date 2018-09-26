@@ -13,16 +13,18 @@ using namespace std;
 int main(){
 	
 	//int型変数を3つ宣言
-	int firstInt;
-	int secondInt;
-	int thirdInt;
+	int firstInt;  // 一つ目
+	int secondInt; // 二つ目
+	int thirdInt;  // 三つ目
 	
 	// それぞれの変数に整数値を代入
-	firstInt  = 10;
-	secondInt = 100;
-	thirdInt  = 1000;
+	firstInt  = 10;   // 一つ目
+	secondInt = 100;  // 二つ目
+	thirdInt  = 1000; // 三つ目
 	
-	// 合計および平均の演算を行い、標準出力ストリームに文字列と値を続けて挿入
+	// 合計の演算を行い、標準出力ストリームに文字列と値を続けて挿入
 	cout << "合計は" <<   firstInt + secondInt + thirdInt       << "です。\n";
+	
+	// 平均の演算を行い、標準出力ストリームに文字列と値を続けて挿入
 	cout << "平均は" << ( firstInt + secondInt + thirdInt ) / 3 << "です。\n";
 }

@@ -31,6 +31,10 @@ int main(){
 	
 	// 各乱数を標準出力
 	cout << "1桁の正の整数値：" << randOneDigitPlus  << "\n";
+	
+	// 各乱数を標準出力
 	cout << "1桁の負の整数値：" << randOneDigitMinus << "\n";
+	
+	// 各乱数を標準出力
 	cout << "2桁の正の整数値：" << randTwoDigitPlus  << "\n";
 }
