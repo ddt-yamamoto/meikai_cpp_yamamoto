@@ -19,10 +19,10 @@ int main(){
 	cout << "この処理系の文字と文字コードと文字種\n";
 	
 	// 今回、for文の式と条件ではループ終了時の制御ができないので、ここでは条件なしでループさせる
-	for( char i = 0; ; i++ ){
+	for( char charNumber = 0; ; charNumber++ ){
 		
 		// 一部の制御文字をエスケープする処理
-		switch( i ){
+		switch( charNumber ){
 			
 		// 警報
 		case '\a' :
@@ -91,20 +91,20 @@ int main(){
 		default :
 			
 			// 表示文字であればそのまま、そうでなければ半角スペースを出力
-			cout << ' ' << (isprint(i) ? i : ' ');
+			cout << ' ' << ( isprint( charNumber ) ? charNumber : ' ' );
 			
 			// switch文を抜ける
 			break;
 		}
 		
 		// int型にキャストして16進数字で表記(表としての見た目のために桁あわせも行う)
-		cout << ' ' << hex << setw(2) << int(i) << ' ';
+		cout << ' ' << hex << setw( 2 ) << int( charNumber ) << ' ';
 		
 		// char型のiがアルファベットまたは10進数字の場合
-		if(isalnum(i)){
+		if( isalnum( charNumber ) ){
 			
 			// 10進数字の場合
-			if(isdigit(i)){
+			if( isdigit( charNumber ) ){
 				
 				// 判定を出力
 				cout << "10進数字\n";
@@ -114,7 +114,7 @@ int main(){
 			else{
 				
 				// 英大文字の場合
-				if(isupper(i)){
+				if( isupper( charNumber ) ){
 					
 					// 判定を出力
 					cout << "英大文字\n";
@@ -130,21 +130,21 @@ int main(){
 		}
 		
 		// 制御文字の場合
-		else if(iscntrl(i)){
+		else if( iscntrl( charNumber ) ){
 			
 			// 判定を出力
 			cout << "制御文字\n";
 		}
 		
 		// 区切り文字の場合
-		else if(ispunct(i)){
+		else if( ispunct( charNumber ) ){
 			
 			// 判定を出力
 			cout << "区切り文字\n";
 		}
 		
 		// 空白類文字の場合
-		else if(isspace(i)){
+		else if( isspace( charNumber ) ){
 			
 			// 判定を出力
 			cout << "空白文字\n";
@@ -158,7 +158,7 @@ int main(){
 		}
 		
 		// 文字コードが最後まで到達したら、for文の式による最後のインクリメントが行われる前に、breakで抜ける
-		if( i == CHAR_MAX ){
+		if( charNumber == CHAR_MAX ){
 			
 			// for文を抜ける
 			break;
