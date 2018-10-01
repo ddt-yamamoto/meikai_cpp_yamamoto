@@ -15,32 +15,37 @@ using namespace std;
 @param argumentInt 引数
 @return 引数が負のとき-1, 0のとき0, 正のとき1
 @author Kenta Yamamoto
-@since 2018/10/01
+@since 2018-10-01
 */
 
-// 受け取ったint型引数の値nが負であれば-1を返却し、0であれば0を返却し、正であれば1を返却する関数sign_ofの定義
-int sign_of(int argumentInt) {
+int getSign(int argumentInt) {
+
+	// 返却値を格納する変数を定義
+	int returnSign = 0;
 
 	// 引数が負のとき
 	if (argumentInt < 0) {
 
-		// -1を返却
-		return -1;
+		// -1を返却用変数に代入
+		returnSign = -1;
 	}
 
 	// 引数が0のとき
 	else if (argumentInt == 0) {
 
-		// 0を返却
-		return 0;
+		// 0を返却用変数に代入
+		returnSign = 0;
 	}
 
 	// 引数が正のとき
 	else {
 
-		// 0を返却
-		return 1;
+		// 1を返却用変数に代入
+		returnSign = 1;
 	}
+
+	// 判定を返却
+	return returnSign;
 }
 
 // main関数の定義
@@ -59,5 +64,5 @@ int main() {
 	cin >> inputInt;
 
 	// 入力値を関数に渡し、返却値を出力
-	cout << sign_of(inputInt);
+	cout << getSign(inputInt);
 }
