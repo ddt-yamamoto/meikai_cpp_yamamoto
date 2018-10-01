@@ -13,7 +13,7 @@ using namespace std;
 int main() {
 
 	// 列挙体の定義
-	enum trump { ダイヤ, ハート, クラブ, スペード };
+	enum EnumTrump { ダイヤ, ハート, クラブ, スペード };
 
 	// 列挙子に対応させ、入力値を受け取る変数を宣言
 	int inputTypeInt;
@@ -33,10 +33,10 @@ int main() {
 	// 列挙子に対応する値、0〜3が入力されるまで繰り返し
 	} while (inputTypeInt < ダイヤ || inputTypeInt > スペード);
 
-	// int型の入力値0〜3を、trump型の0〜3にキャストして、取りうる値を限定する
-	trump selectedTypeInt = static_cast<trump>(inputTypeInt);
+	// int型の入力値0〜3を、EnumTrump型の0〜3にキャストして、取りうる値を限定する
+	EnumTrump selectedTypeInt = static_cast<EnumTrump>(inputTypeInt);
 
-	// trump型の0〜3に応じてswitchする。列挙子に対応している
+	// EnumTrump型の0〜3に応じてswitchする。列挙子に対応している
 	switch (selectedTypeInt) {
 
 	// 0(ダイヤ)の場合

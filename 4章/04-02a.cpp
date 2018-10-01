@@ -17,10 +17,8 @@ using namespace std;
 int main(){
 	
 	// Int型の最小値で初期化
-	int countInt = INT_MIN;
-	
-	// 今回、for文の式と条件ではループ終了時の制御ができないので、ここでは条件なしでループさせる
-	for( ; ; countInt++ ){
+	// 今回、for文の式と条件ではループ終了時の制御ができないので、ここでは終了条件なしでループさせる
+	for( int countInt = INT_MIN; ; countInt++ ){
 		
 		// 10進数での表示
 		cout << dec << countInt << ' ';

@@ -13,8 +13,8 @@ using namespace std;
 // main関数の定義
 int main() {
 
-	// weekday型の列挙型を定義
-	enum weekday { Sunday, Monday, Tuesday, Wednesday, Thirsday, Friday, Saturday };
+	// EnumWeekday型の列挙型を定義
+	enum EnumWeekday { Sunday, Monday, Tuesday, Wednesday, Thirsday, Friday, Saturday };
 
 	// 曜日選択のために入力された値を格納する変数を宣言
 	int inputWeekdayInt;
@@ -43,11 +43,11 @@ int main() {
 	// 入力値を格納
 	cin >> daysPassInt;
 
-	// int型の入力値をweekday型にキャストして、weekday型変数の初期化子とする
-	weekday selectedWeekday = static_cast<weekday>(inputWeekdayInt);
+	// int型の入力値をEnumWeekday型にキャストして、EnumWeekday型変数の初期化子とする
+	EnumWeekday selectedWeekday = static_cast<EnumWeekday>(inputWeekdayInt);
 
-	// 選択した曜日と経過日数に対する7の剰余を求め、それをweekday型にキャストして、weekday型変数の初期化子とする
-	weekday passedWeekday = static_cast<weekday>((inputWeekdayInt + daysPassInt) % 7);
+	// 選択した曜日と経過日数に対する7の剰余を求め、それをEnumWeekday型にキャストして、EnumWeekday型変数の初期化子とする
+	EnumWeekday passedWeekday = static_cast<EnumWeekday>((inputWeekdayInt + daysPassInt) % 7);
 
 	// 結果メッセージの前半を出力
 	cout << "日数経過後の曜日は";

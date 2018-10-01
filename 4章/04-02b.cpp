@@ -17,10 +17,8 @@ using namespace std;
 int main(){
 	
 	// 符号無しなので最小値は0
-	unsigned countUnsignedInt = 0;
-	
 	// 今回、for文の式と条件ではループ終了時の制御ができないので、ここでは条件なしでループさせる
-	for( countUnsignedInt; ; countUnsignedInt++ ){
+	for( unsigned countUnsignedInt = 0; ; countUnsignedInt++ ){
 		
 		// 10進数での表示
 		cout << dec << countUnsignedInt << ' ';
