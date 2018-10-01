@@ -19,13 +19,13 @@ int main() {
 	srand(time(NULL));
 
 	// 配列の長さを定値オブジェクトとして定義
-	const int arrayLength = 15;
+	const int ARRAY_LENGTH = 15;
 
 	// int型配列を宣言
-	int arrayInt[arrayLength];
+	int arrayInt[ARRAY_LENGTH] = { 0 };
 
 	// 配列の長さと同じ数だけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 0〜10の乱数を生成してcountInt番目の要素として格納
 		arrayInt[countInt] = rand() % 11;
@@ -36,7 +36,7 @@ int main() {
 	for (int lowCountInt = 10; lowCountInt > 0; lowCountInt--) {
 
 		// 横に並んだ配列を走査
-		for (int columnCountInt = 0; columnCountInt < arrayLength; columnCountInt++) {
+		for (int columnCountInt = 0; columnCountInt < ARRAY_LENGTH; columnCountInt++) {
 
 			// columnCountInt列・lowCountInt行の位置に星を出力する条件のチェック
 			if (arrayInt[columnCountInt] >= lowCountInt) {
@@ -58,7 +58,7 @@ int main() {
 	}
 
 	// 区切り用の記号を出力するためのループ
-	for (int countInt = 0; countInt < arrayLength * 2 + 1; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH * 2 + 1; countInt++) {
 
 		// 記号を出力
 		cout << '-';
@@ -68,7 +68,7 @@ int main() {
 	cout << '\n';
 
 	// 最下段のラベルを出力するためのループ
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 配列の添字にあたる数字の10の剰余を、幅をそろえて出力
 		cout << setw(2) << countInt % 10;

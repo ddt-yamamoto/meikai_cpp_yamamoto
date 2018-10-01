@@ -18,10 +18,10 @@ int main() {
 	const int SUMMARY_TYPE_NUMBER = 2; // 集計する種類数(合計、平均)
 
 	// 科目名を列挙型で定義
-	enum EnumSubject { 国語, 数学 };
+	enum EnumSubject { Japanese, Math };
 
 	// 集計の種類を列挙型で定義
-	enum EnumSummary { 合計, 平均 };
+	enum EnumSummary { Summary, Average };
 
 	// 行列によって表す点数表(学生×科目)を定義
 	int matrixScore[STUDENT_NUMBER][SUBJECT_NUMBER] = { 0 };
@@ -43,7 +43,7 @@ int main() {
 			switch (countSubject) {
 
 			// countSubjectが0のとき
-			case 国語:
+			case Japanese:
 
 				// 列挙子に合わせた文字列を出力
 				cout << "国語";
@@ -52,7 +52,7 @@ int main() {
 				break;
 
 			// countSubjectが1のとき
-			case 数学:
+			case Math:
 
 				// 列挙子に合わせた文字列を出力
 				cout << "数学";
@@ -89,10 +89,10 @@ int main() {
 		for (int countSubject = 0; countSubject < SUBJECT_NUMBER; countSubject++) {
 
 			// 学生ごとの合計をあらわす行列の位置に格納して合計を計算する
-			matrixSummary[countStudent + SUMMARY_TYPE_NUMBER][合計] += matrixScore[countStudent][countSubject];
+			matrixSummary[countStudent + SUMMARY_TYPE_NUMBER][Summary] += matrixScore[countStudent][countSubject];
 
 			// 科目ごとの合計をあらわす行列の位置に格納して合計を計算する
-			matrixSummary[countSubject][合計] += matrixScore[countStudent][countSubject];
+			matrixSummary[countSubject][Summary] += matrixScore[countStudent][countSubject];
 		}
 	}
 
@@ -107,7 +107,7 @@ int main() {
 		switch (countInt) {
 
 		// 国語(0)の場合
-		case 国語:
+		case Japanese:
 
 			// ラベルを出力
 			cout << " 国語 ";
@@ -116,7 +116,7 @@ int main() {
 			break;
 
 		// 数学(1)の場合
-		case 数学:
+		case Math:
 
 			// ラベルを出力
 			cout << " 数学 ";
@@ -138,14 +138,14 @@ int main() {
 		if (countInt < SUBJECT_NUMBER) {
 
 			// 合計と学生数から科目の平均を求める
-			matrixSummary[countInt][平均] = matrixSummary[countInt][合計] / double(STUDENT_NUMBER);
+			matrixSummary[countInt][Average] = matrixSummary[countInt][Summary] / double(STUDENT_NUMBER);
 		}
 
 		// 集計対象が学生の場合
 		else {
 
 			// 合計と科目数から個人の平均を求める
-			matrixSummary[countInt][平均] = matrixSummary[countInt][合計] / double(SUBJECT_NUMBER);
+			matrixSummary[countInt][Average] = matrixSummary[countInt][Summary] / double(SUBJECT_NUMBER);
 		}
 
 		// 集計項目の数だけループ(合計、平均で2つ)

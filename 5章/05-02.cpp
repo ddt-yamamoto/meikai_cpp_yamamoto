@@ -13,13 +13,13 @@ using namespace std;
 int main() {
 
 	// 配列の長さを示す定値オブジェクトの定義
-	const int arrayLength = 5;
+	const int ARRAY_LENGTH = 5;
 
 	// double型配列の宣言
-	double arrayDouble[arrayLength];
+	double arrayDouble[ARRAY_LENGTH] = { 0 };
 
 	// 配列の長さと同じ数だけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// すべての要素に0.0を代入していく
 		arrayDouble[countInt] = 0.0;
@@ -29,7 +29,7 @@ int main() {
 	cout << fixed << setprecision(1);
 
 	// 配列の長さと同じ数だけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 配列を走査して出力
 		cout << "arrayDouble[" << countInt << "] = " << arrayDouble[countInt] << '\n';

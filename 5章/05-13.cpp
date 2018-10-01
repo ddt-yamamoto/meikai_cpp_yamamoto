@@ -12,19 +12,19 @@ using namespace std;
 int main() {
 
 	// 二次元配列の行数を定義
-	const int lowNumber = 5;
+	const int LOW_NUMBER = 5;
 
 	// 二次元配列の列数を定義
-	const int columnNumber = 4;
+	const int COLUMN_NUMBER = 4;
 
 	// 二次元配列を、初期化子を一部しか与えない歯抜け状態で定義
-	int arrayInt[lowNumber][columnNumber] = { {0}, {2, 3}, {4, 5, 6, 7} };
+	int arrayInt[LOW_NUMBER][COLUMN_NUMBER] = { {0}, {2, 3}, {4, 5, 6, 7} };
 
 	// 走査して出力をするため、行のループ
-	for (int countLow = 0; countLow < lowNumber; countLow++) {
+	for (int countLow = 0; countLow < LOW_NUMBER; countLow++) {
 
 		// 列のループ
-		for (int countColumn = 0; countColumn < columnNumber; countColumn++) {
+		for (int countColumn = 0; countColumn < COLUMN_NUMBER; countColumn++) {
 
 			// 構成要素の値を出力
 			cout << arrayInt[countLow][countColumn];

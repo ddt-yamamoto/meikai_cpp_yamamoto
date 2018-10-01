@@ -14,16 +14,16 @@ using namespace std;
 int main() {
 
 	// 定数オブジェクトにより配列の要素数を定義
-	const int arrayLength = 7;
+	const int ARRAY_LENGTH = 7;
 
 	// 配列を初期化
-	int  arrayInt[arrayLength] = { 0 };
+	int  arrayInt[ARRAY_LENGTH] = { 0 };
 
 	// 乱数の種を生成
 	srand(time(NULL));
 
 	// 配列の長さと同じ回数ループ
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 0〜99の乱数を配列に格納
 		arrayInt[countInt] = rand() % 100;
@@ -34,11 +34,11 @@ int main() {
 
 	// 先頭から順に、それ以降の添字のランダムな要素と入れ替えを行う
 	// 最後の一回は残り物なので選ぶ必要がなく、ループは要素数より1回少なくてよい
-	for (int countInt = 0; countInt < arrayLength - 1; countInt++) {
-		// rand() % (arrayLength - countInt) + countInt　と countIntを交換
+	for (int countInt = 0; countInt < ARRAY_LENGTH - 1; countInt++) {
+		// rand() % (ARRAY_LENGTH - countInt) + countInt　と countIntを交換
 
 		// 現在のcountIntの位置以降の要素から一つを選び、変数randSelectedに代入
-		int randSelected = rand() % (arrayLength - countInt) + countInt;
+		int randSelected = rand() % (ARRAY_LENGTH - countInt) + countInt;
 
 		// 入れ替え操作を行う。Aを一時的な箱に退避
 		int temporaryInt = arrayInt[countInt];
@@ -54,7 +54,7 @@ int main() {
 	cout << "要素の並びをシャッフルしました。\n";
 
 	// 配列の長さと同じだけループ
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 入れ替えが終わった配列を走査し出力
 		cout << "arrayInt[" << countInt << "] = " << arrayInt[countInt] << '\n';

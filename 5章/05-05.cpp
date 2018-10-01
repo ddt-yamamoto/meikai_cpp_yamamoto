@@ -18,13 +18,13 @@ int main() {
 	srand(time(NULL));
 
 	// 配列の長さを示す定値オブジェクトを定義
-	const int arrayLength = 6;
+	const int ARRAY_LENGTH = 6;
 
 	// int型配列の宣言
-	int arrayInt[arrayLength];
+	int arrayInt[ARRAY_LENGTH] = { 0 };
 
 	// 配列と同じ長さだけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 		
 		// 乱数の10の剰余+1を代入して、1〜10の乱数とする
 		arrayInt[countInt] = rand() % 10 + 1;
@@ -45,7 +45,7 @@ int main() {
 	}
 
 	// 配列と同じ長さだけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 配列を走査し、出力
 		cout << "arrayInt[" << countInt << "] = " << arrayInt[countInt] << '\n';

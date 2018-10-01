@@ -18,13 +18,16 @@ int main() {
 	srand(time(NULL));
 
 	// 配列の長さを示す定値オブジェクトを定義
-	const int arrayLength = 6;
+	const int ARRAY_LENGTH = 6;
 
 	// int型配列の宣言
-	int arrayInt[arrayLength];
+	int arrayInt[ARRAY_LENGTH] = { 0 };
+
+	// 一つ前の要素を格納する変数を定義
+	int formerElementInt = 0;
 
 	// 配列と同じ長さだけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 		
 		// 同じ値が連続しないように繰り返し
 		do {
@@ -33,11 +36,14 @@ int main() {
 			arrayInt[countInt] = rand() % 10 + 1;
 
 		// 一つ前の要素と同じ値が格納されることがなくなるまで繰り返す
-		} while (arrayInt[countInt] == arrayInt[countInt - 1]);
+		} while (arrayInt[countInt] == formerElementInt);
+
+		// 乱数が決定したら、それを新たに「一つ前の要素」としておく
+		formerElementInt = arrayInt[countInt];
 	}
 
 	// 配列と同じ長さだけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 配列を走査し、出力
 		cout << "arrayInt[" << countInt << "] = " << arrayInt[countInt] << '\n';

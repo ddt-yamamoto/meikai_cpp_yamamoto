@@ -19,20 +19,20 @@ int main() {
 	srand(time(NULL));
 
 	// 配列の長さを定値オブジェクトとして定義
-	const int arrayLength = 15;
+	const int ARRAY_LENGTH = 15;
 
 	// int型配列を宣言
-	int arrayInt[arrayLength];
+	int arrayInt[ARRAY_LENGTH] = { 0 };
 
 	// 配列の長さと同じ数だけ繰り返し
-	for (int countInt = 0; countInt < arrayLength; countInt++) {
+	for (int countInt = 0; countInt < ARRAY_LENGTH; countInt++) {
 
 		// 0〜10の乱数を生成してcountInt番目の要素として格納
 		arrayInt[countInt] = rand() % 11;
 	}
 
 	// 配列を走査して出力
-	for (int countInt1st = 0; countInt1st < arrayLength; countInt1st++) {
+	for (int countInt1st = 0; countInt1st < ARRAY_LENGTH; countInt1st++) {
 
 		// 配列の要素番号を出力
 		cout << "a[" << setw(2) << countInt1st << "] : ";
