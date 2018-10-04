@@ -23,44 +23,43 @@ void printSeason(int argumentMonth) {
 	switch (argumentMonth) {
 
 	// 3,4,5月の場合
-	case 3: case 4: case 5:
-
+	case 3: // 3月の場合
+	case 4: // 4月の場合
+	case 5: // 5月の場合
 		// 判定を出力
 		cout << "春\n";
-
 		// switchを抜ける
 		break;
 
 	// 6,7,8月の場合
-	case 6: case 7: case 8:
-
+	case 6: // 6月の場合
+	case 7: // 7月の場合
+	case 8: // 8月の場合
 		// 判定を出力
 		cout << "夏\n";
-
 		// switchを抜ける
 		break;
 
 	// 9,10,11月の場合
-	case 9: case 10: case 11:
-
+	case 9:  // 9月の場合
+	case 10: // 10月の場合
+	case 11: // 11月の場合
 		// 判定を出力
 		cout << "秋\n";
-
 		// switchを抜ける
 		break;
 
 	// 12,1,2月の場合
-	case 12: case 1: case 2:
-
+	case 12: // 12月の場合
+	case 1:  // 1月の場合
+	case 2:  // 2月の場合
 		// 判定を出力
 		cout << "冬\n";
-
 		// switchを抜ける
 		break;
 
 	// それ以外の場合
 	default:
-
 		// switchを抜ける
 		break;
 	}
