@@ -37,21 +37,18 @@ int numberToNumberSummary(int argumentTo, int argumentFrom = 1) {
 // main関数の定義
 int main() {
 
-	const int TEST_TO = 10;  // テスト用の定数を定義
-	const int TEST_FROM = 5; // テスト用の定数を定義
-
-	int inputTo = TEST_TO;     // 関数に渡す変数をテスト用定数で初期化
-	int inputFrom = TEST_FROM; // 関数に渡す変数をテスト用定数で初期化
+	int testIntTo = 10;		// 関数に渡すテスト用の変数を定義
+	int testIntFrom = 5;	// 関数に渡すテスト用の変数を定義
 
 	// 説明メッセージを出力
 	cout << "b以上a以下の全整数の和を求めます。\n";
 
 	// 説明メッセージを出力
-	cout << "bは" << TEST_FROM << ", aは" << TEST_TO << "とします。\n";
+	cout << "bは" << testIntFrom << ", aは" << testIntTo << "とします。\n";
 
 	// 引数を省略せず、aもbも渡した場合の結果の出力
-	cout << "引数を省略しなかった場合：" << numberToNumberSummary(inputTo, inputFrom) << '\n';
+	cout << "引数を省略しなかった場合：" << numberToNumberSummary(testIntTo, testIntFrom) << '\n';
 
 	// 引数を省略して、aだけを渡した場合の結果を出力
-	cout << "引数を省略した場合      ：" << numberToNumberSummary(inputTo) << '\n';
+	cout << "引数を省略した場合      ：" << numberToNumberSummary(testIntTo) << '\n';
 }
