@@ -19,10 +19,7 @@ using namespace std;
 *@author Kenta Yamamoto
 *@since 2018-10-03
 */
-int randomNoRepeat() {
-
-	// 前回実行時に返却した乱数を保存するための、静的記憶域期間をもつ変数を定義(最初は0〜9以外の値にしておく)
-	static int formerRandomInt = -1;
+int randomNoRepeat(int& argumenRomdomInt) {
 
 	// 乱数の種を生成
 	srand(time(NULL));
@@ -37,47 +34,60 @@ int randomNoRepeat() {
 		returnRandomInt = rand() % 10;
 
 	// 前回返却値と同じならばやり直し
-	} while (returnRandomInt == formerRandomInt);
+	} while (returnRandomInt == argumenRomdomInt);
 
 	// 前回返却値として、今回の返却値を保存しておく
-	formerRandomInt = returnRandomInt;
+	argumenRomdomInt = returnRandomInt;
 
 	// 乱数を返却
 	return returnRandomInt;
 }
 
+/**
+*続行の確認を行う関数
+*@param なし
+*@return bool型 true/false
+*@author Kenta Yamamoto
+*@since 2018-10-02
+*/
+bool confirmRetry() {
+
+	// 入力値を格納するための変数を宣言
+	int retryInt;
+
+	// 0か1を入力されるまで繰り返し
+	do {
+
+		// 続行確認のメッセージ
+		cout << "もう一度？<Yes...1 / No...0>:";
+
+		// 入力値を受け取る
+		cin >> retryInt;
+
+		// 入力値が0でも1でもないならば続ける
+	} while (retryInt != 0 && retryInt != 1);
+
+	// 0または1をbool型に静的キャストして返却
+	return static_cast<bool>(retryInt);
+}
+
 // main関数を定義
 int main() {
 
-	// randomNoRepeat関数を繰り返し呼ぶかの確認を行う際の入力を格納する変数を定義
-	int retryConfirm = 0;
+	// randomNoRepeat関数の前回実行時に返却された乱数を保存するための、静的記憶域期間をもつ変数を定義(最初は0〜9以外の値にしておく)
+	static int formerRandomInt = -1;
 
 	// 終了を選んでbreakで抜けるまで繰り返し
 	while (true) {
 
-		// 1か0を入力されるまで繰り返し
-		do {
+		// 乱数を返却する関数を呼び出して、返却値を出力
+		cout << randomNoRepeat(formerRandomInt) << '\n';
 
-			// 選択肢を出し入力を促す
-			cout << "呼ぶ？はい...1 / 終了...0 :";
-
-			// 入力値を変数に格納
-			cin >> retryConfirm;
-
-			// 入力値が1か0でなかった場合はやり直し
-		} while (retryConfirm != 1 && retryConfirm != 0);
-
-		// 入力値をbool型に変換
-		static_cast<bool>(retryConfirm);
-
-		// いいえが選ばれていた場合
-		if (!retryConfirm) {
+		// 繰り返し続行するかを確認する関数を呼び出す
+		if (!confirmRetry()) {
 
 			// whileを抜ける
 			break;
 		}
-
-		// 乱数を返却する関数を呼び出して、返却値を出力
-		cout << randomNoRepeat() << '\n';
 	}
 }
