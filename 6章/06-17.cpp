@@ -16,17 +16,17 @@ using namespace std;
 *@author Kenta Yamamoto
 *@since 2018-10-03
 */
-void putCount() {
+void putCount(int& argumentCountInt) {
 
-	// 呼ばれた回数を保存するための、静的記憶域期間をもつ変数を定義
-	static int callCountInt = 0;
-
-	// 回数をインクリメントしてから出力
-	cout << "呼ばれた回数：" << ++callCountInt << '\n';
+	// 参照先の回数をインクリメントしてから出力
+	cout << "呼ばれた回数：" << ++argumentCountInt << '\n';
 }
 
 // main関数を定義
 int main() {
+
+	// putCount関数を呼んだ回数を保存するための、静的記憶域期間をもつ変数を定義
+	static int callCountInt = 0;
 
 	// putCount関数を繰り返し呼ぶかの確認を行う際の入力を格納する変数を定義
 	int retryConfirm = 0;
@@ -56,7 +56,7 @@ int main() {
 			break;
 		}
 
-		// 呼ばれた回数をカウントして出力する関数を呼び出す
-		putCount();
+		// 呼ばれた回数をカウントして出力する関数を呼び出す。カウント用変数の参照を渡す。
+		putCount(callCountInt);
 	}
 }
