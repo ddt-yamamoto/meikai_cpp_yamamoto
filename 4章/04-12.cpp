@@ -13,14 +13,13 @@ using namespace std;
 int main() {
 
 	// 列挙体の定義
-	enum EnumTrump { ダイヤ, ハート, クラブ, スペード };
+	enum EnumTrump { Dia, Heart, Club, Spade };
 
 	// 列挙子に対応させ、入力値を受け取る変数を宣言
 	int inputTypeInt;
 
 	// 対応している値が入力されるまで繰り返す
 	do {
-
 		// 選択肢を提示する
 		cout << "0…ダイヤ  1…ハート  2…クラブ  3…スペード\n";
 
@@ -31,7 +30,7 @@ int main() {
 		cin >> inputTypeInt;
 
 	// 列挙子に対応する値、0〜3が入力されるまで繰り返し
-	} while (inputTypeInt < ダイヤ || inputTypeInt > スペード);
+	} while (inputTypeInt < Dia || inputTypeInt > Spade);
 
 	// int型の入力値0〜3を、EnumTrump型の0〜3にキャストして、取りうる値を限定する
 	EnumTrump selectedTypeInt = static_cast<EnumTrump>(inputTypeInt);
@@ -39,45 +38,36 @@ int main() {
 	// EnumTrump型の0〜3に応じてswitchする。列挙子に対応している
 	switch (selectedTypeInt) {
 
-	// 0(ダイヤ)の場合
-	case ダイヤ:
-
-		// 列挙子と同じ文字列を出力
+	// 0(Dia)の場合
+	case Dia:
+		// 列挙子に対応した文字列を出力
 		cout << "ダイヤ\n";
-
 		// switchを抜ける
 		break;
 
-	// 1(ハート)の場合
-	case ハート:
-
-		// 列挙子と同じ文字列を出力
+	// 1(Heart)の場合
+	case Heart:
+		// 列挙子に対応した文字列を出力
 		cout << "ハート\n";
-
 		// switchを抜ける
 		break;
 
-	// 2(クラブ)の場合
-	case クラブ:
-
-		// 列挙子と同じ文字列を出力
+	// 2(Club)の場合
+	case Club:
+		// 列挙子に対応した文字列を出力
 		cout << "クラブ\n";
-
 		// switchを抜ける
 		break;
 
-	// 3(スペード)の場合
-	case スペード:
-
-		// 列挙子と同じ文字列を出力
+	// 3(Spade)の場合
+	case Spade:
+		// 列挙子に対応した文字列を出力
 		cout << "スペード\n";
-
 		// switchを抜ける
 		break;
 
 	// それ以外の場合
 	default:
-
 		// switchを抜ける
 		break;
 	}
