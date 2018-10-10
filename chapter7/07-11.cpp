@@ -11,6 +11,9 @@ void print2d(int a[][5], int n);
 // 名前空間stdの利用宣言
 using namespace std;
 
+// 列数は5で固定されているので、ファイル有効範囲をもつ定数として定義
+const int COLUMN_NUMBER = 5;
+
 /**
 *値渡しされた引数の整数型オブジェクトの桁数を返す関数。演算子'-'も一桁と数える。
 *@param pointerInteger 桁数を数える対象の、整数型オブジェクト
@@ -55,9 +58,6 @@ int getDigit(int argumentInteger) {
 */
 void getMaximumDigit(int a[][5], int m[], int n) {
 
-	// 列数は5で固定されているので、定数として定義
-	const int COLUMN_NUMBER = 5;
-
 	// 列数と同じ数だけループ
 	for (int countColumn = 0; countColumn < COLUMN_NUMBER; countColumn++) {
 
@@ -78,14 +78,40 @@ void getMaximumDigit(int a[][5], int m[], int n) {
 	}
 }
 
+/**
+*n行5列のint型2次元配列aの全構成要素の値を縦横に並べて表示する関数
+*@param a[][5] n行5列のint型2次元配列
+*@param n 2次元配列a[][5]の行数
+*@author Kenta Yamamoto
+*@since 2018-10-10
+*/
+void print2d(int a[][5], int n) {
+
+	// 各列の最大桁数を格納するための、列数と同じ長さの1次元配列の定義
+	int maximumArray[COLUMN_NUMBER] = { 0 };
+
+	// 二次元配列の各列の最大桁数を一次元配列に格納するための関数を呼び出し
+	getMaximumDigit(a, maximumArray, n);
+
+	// 配列の行と同じ数だけループ
+	for (int countLow = 0; countLow < n; countLow++) {
+
+		// 配列の列を走査して要素を出力
+		for (int countColumn = 0; countColumn < COLUMN_NUMBER; countColumn++) {
+
+			// 列ごとの最大桁数を配列から取得して、長さを調整しながら要素を左詰めで出力
+			cout << left << setw(maximumArray[countColumn]) << a[countLow][countColumn] << ' ';
+		}
+		// 一行ごとに改行
+		cout << '\n';
+	}
+}
+
 // main関数の定義
 int main() {
 
 	// 行数を定数で定義
 	const int LOW_NUMBER = 3;
-
-	// 列数を定数で定義
-	const int COLUMN_NUMBER = 5;
 
 	// 関数に渡すためのサンプル用二次元配列を定義
 	int sampleMatrix[LOW_NUMBER][COLUMN_NUMBER] =
@@ -93,22 +119,6 @@ int main() {
 	, { 535, 9999, 2, 128, -127 }
 	, { 2, 5, -123, 9 ,5 } };
 
-	// 各列の最大桁数を格納するための、列数と同じ長さの1次元配列の定義
-	int maximumArray[COLUMN_NUMBER] = { 0 };
-
-	// 二次元配列の各列の最大桁数を一次元配列に格納するための関数を呼び出し
-	getMaximumDigit(sampleMatrix, maximumArray, LOW_NUMBER);
-
-	// 配列の行と同じ数だけループ
-	for (int countLow = 0; countLow < LOW_NUMBER; countLow++) {
-
-		// 配列の列を走査して要素を出力
-		for (int countColumn = 0; countColumn < COLUMN_NUMBER; countColumn++) {
-
-			// 列ごとの最大桁数を配列から取得して、長さを調整しながら要素を左詰めで出力
-			cout << left << setw(maximumArray[countColumn]) << sampleMatrix[countLow][countColumn] << ' ';
-		}
-		// 一行ごとに改行
-		cout << '\n';
-	}
+	// sampleMatrix全構成要素の値を縦横に並べて表示する関数を呼び出し
+	print2d(sampleMatrix, LOW_NUMBER);
 }
