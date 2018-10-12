@@ -31,7 +31,8 @@ void mem_set(void* p, int n, unsigned char v) {
 		// char*型のポインタsingleByteが指すアドレスに対して、1バイトの文字であるvを代入
 		*singleByte = v;
 
-		// char*型は1バイトであるので、インクリメントによって、singleByteは1バイト先を示すようになる
+		// char型は1バイトであるので、char型を指すポインタであるsingleByteの値をインクリメントすると、
+		// 値の増分は1バイトとなり、1バイト先のアドレスを示すようになる。
 		singleByte++;
 	}
 }
