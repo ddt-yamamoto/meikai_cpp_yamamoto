@@ -55,8 +55,7 @@ int main() {
 	int a[ARRAY_LENGTH]	= { 1, 7, 5, 7, 2, 4, 7 };
 
 	// 一致場所の格納用の配列idxの定義。長さは最大で配列aと同じになるので、配列aと同じにしておく。
-	// 一致場所が先頭(0)という場合もあるので、すべての要素を-1で初期化しておく。
-	int idx[ARRAY_LENGTH] = { -1 };
+	int idx[ARRAY_LENGTH] = { 0 };
 
 	// 配列a内のkeyと等しい全要素の添字を配列idxに格納する関数を呼び出し、返り値である一致回数(idxに格納した長さ)を受け取る
 	int indexLength = search_idx(a, idx, ARRAY_LENGTH, key);
