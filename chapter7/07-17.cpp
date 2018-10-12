@@ -46,8 +46,11 @@ int main() {
 	// 先頭から何バイトに代入をするかを示す数を定義
 	const int n = 8;
 
+	// テスト用のint型配列の長さを定義
+	const int SAMPLE_ARRAY_LENGTH = 4;
+
 	// テスト用のint型配列オブジェクトを定義
-	int sampleArray[4] = { 1, 2, 3, 4 };
+	int sampleArray[SAMPLE_ARRAY_LENGTH] = { 1, 2, 3, 4 };
 
 	// 関数を呼び出し、int型配列オブジェクト、バイト数、文字を渡す
 	mem_set(sampleArray, n, v);
@@ -56,7 +59,7 @@ int main() {
 	cout << "int型のまま出力\n";
 
 	// 変換後のオブジェクトを走査して出力
-	for (int countInt = 0; countInt < 4; countInt++) {
+	for (int countInt = 0; countInt < SAMPLE_ARRAY_LENGTH; countInt++) {
 
 		// int型のまま出力して確認
 		cout << "sampleArray[" << countInt << "] = " << sampleArray[countInt] << '\n';
@@ -66,7 +69,7 @@ int main() {
 	cout << "char型にキャストして出力\n";
 
 	// 変換後のオブジェクトを走査して出力
-	for (int countInt = 0; countInt < 4; countInt++) {
+	for (int countInt = 0; countInt < SAMPLE_ARRAY_LENGTH; countInt++) {
 
 		// char型にキャストして出力して確認
 		cout << "sampleArray[" << countInt << "] = " << char(sampleArray[countInt]) << '\n';
