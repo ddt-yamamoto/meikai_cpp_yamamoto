@@ -31,8 +31,11 @@ void fill(int* p, int n, int v) {
 // main関数の定義
 int main() {
 
+	// 配列の要素数を定義
+	const int ELEMENT_NUMBER = 5;
+
 	// テスト用の配列を用意
-	int sampleArray[5] = { 1, 2, 3, 4, 5 };
+	int sampleArray[ELEMENT_NUMBER] = { 1, 2, 3, 4, 5 };
 
 	// 配列長を要素の長さで割ることで配列の要素数を取得
 	int sampleSize = sizeof(sampleArray) / sizeof(sampleArray[0]);
