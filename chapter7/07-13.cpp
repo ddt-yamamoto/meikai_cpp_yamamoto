@@ -31,9 +31,12 @@ void ary_cpy(int* a, const int* b, int n) {
 // main関数の定義
 int main() {
 
+	// テスト用配列の要素数を定義
+	const int ELEMENT_NUMBER = 5;
+
 	// テスト用の配列を用意
-	int sampleArrayA[5] = { 1, 2, 3, 4, 5 };	// 配列a
-	int sampleArrayB[5] = { 6, 7, 8, 9, 10 };	// 配列b
+	int sampleArrayA[ELEMENT_NUMBER] = { 1, 2, 3, 4, 5 };	// 配列a
+	int sampleArrayB[ELEMENT_NUMBER] = { 6, 7, 8, 9, 10 };	// 配列b
 
 	// 配列長を要素の長さで割ることで配列bの要素数を取得
 	int sampleSize = sizeof(sampleArrayB) / sizeof(sampleArrayB[0]);
