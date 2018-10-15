@@ -53,21 +53,18 @@ int myStringNumberCompare(char* s1, const char* s2, size_t n) {
 	// 比較結果の返却値を定義
 	int returnSign = 0;
 
-	// 引数で指定された回数(n回)ループする
-	for (int countInt = 0; countInt < static_cast<int>(n); countInt++) {
+	// 引数で指定された回数(n回)ループする。
+	// 途中で返却値が0以外になったらその時点でループを抜ける。
+	for (int countInt = 0; countInt < static_cast<int>(n) || returnSign!= 0; countInt++) {
 
-		// 文字の配列s1と文字の配列s2の少なくとも一方がナル文字だった場合
-		if (s1[countInt] == '\0' || s2[countInt] == '\0') {
+		// 文字の配列s1と文字の配列s2の両方とも、ナル文字ではない場合
+		if (s1[countInt] != '\0' && s2[countInt] != '\0') {
 
-			// ループを抜ける
-			break;
+			// 文字の配列の比較を行い、結果を返却値に格納
+			returnSign = static_cast<int>(s1[countInt] - s2[countInt]);
 		}
-		// 文字の配列の比較を行い、結果を返却値に格納
-		returnSign = static_cast<int>(s1[countInt] - s2[countInt]);
-		
-		// 比較の結果、等しくなかった場合
-		if (returnSign != 0) {
-
+		// 文字の配列s1と文字の配列s2のいずれかがナル文字の場合
+		else {
 			// ループを抜ける
 			break;
 		}
