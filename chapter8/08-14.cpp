@@ -23,23 +23,23 @@ using namespace std;
 char* str_rvs(char* s) {
 
 	// 文字列sの長さを取得
-	int stringLength = strlen(s);
+	const int STRING_LENGTH = strlen(s);
 
 	// 長さをもとに、文字列中の最後の文字の添字を定義
-	int lastIndex = stringLength - 1;
+	const int LAST_INDEX = STRING_LENGTH - 1;
 
 	// 前後入れ替えのため、文字列の長さの半分(奇数の場合切り捨てで問題なし)の回数ループする
-	for (int countIndex = 0; countIndex < (stringLength / 2); countIndex++) {
+	for (int countIndex = 0; countIndex < (STRING_LENGTH / 2); countIndex++) {
 
 		// 前からcountIndex番目の文字Aと、後ろからcountIndex番目の文字Bの入れ替え処理
 		// 仮の入れ物にAを退避
-		char temp = s[countIndex];
+		char temporaryChar = s[countIndex];
 
 		// BをAに代入
-		s[countIndex] = s[lastIndex - countIndex];
+		s[countIndex] = s[LAST_INDEX - countIndex];
 
 		// 仮の入れ物に退避しておいたAをBに代入
-		s[lastIndex - countIndex] = temp;
+		s[LAST_INDEX - countIndex] = temporaryChar;
 	}
 	// 文字列の先頭のポインタを返す
 	return s;
