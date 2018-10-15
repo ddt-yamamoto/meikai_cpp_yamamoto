@@ -14,9 +14,6 @@ c[0]に3を、c[1], c[4], c[5]に1を、c[8]に2を格納し、それ以外の�
 // 名前空間stdの利用宣言
 using namespace std;
 
-// カウントする数字文字の個数(種類数)を定義
-const int DIGIT_NUMBER = 10;
-
 /**
 *文字列sに含まれる数字文字'0', '1', ... '9' の個数をカウントして、
 *各数字文字の個数をc[0], c[1], ... c[9] に格納する関数
@@ -27,27 +24,29 @@ const int DIGIT_NUMBER = 10;
 */
 void count_digits(const char* s, int c[]) {
 
-	// カウントする数字文字を配列として定義
-	char digitCharArray[DIGIT_NUMBER] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	// char型の'0'にあたる定数を定義
+	const char ZERO_CHAR = '0';
 
 	// 文字列の先頭から、ナル文字にあたるまで走査
 	for (int stringPosition = 0; s[stringPosition]; stringPosition++) {
 
-		// 数字文字の配列を走査
-		for (int digitPosition = 0; digitPosition < DIGIT_NUMBER; digitPosition++) {
+		// 注目している文字を表すchar型の整数と、'0'を表すchar型の整数との差を求め、int型変数を定義
+		int digitInt = static_cast<int>(s[stringPosition] - ZERO_CHAR);
 
-			// 文字列sのなかで現在着目中の文字が、数字文字の配列digitCharArrayのどれかの要素と一致するかのチェック
-			if (s[stringPosition] == digitCharArray[digitPosition]) {
+		// この差が0～9の場合は、注目している文字は、差の数字そのままの数字文字である
+		if (digitInt >= 0 && digitInt <= 9) {
 
-				// 結果格納用の配列cの、一致した数字文字に対応する要素の値をインクリメントする
-				c[digitPosition]++;
-			}
+			// 結果格納用配列の当該位置の要素に1カウントする
+			c[digitInt]++;
 		}
 	}
 }
 
 // main関数を定義
 int main() {
+
+	// カウントする数字文字の個数(種類数)を定義
+	const int DIGIT_NUMBER = 10;
 
 	// カウントの対象となる文字列を定義
 	const char* charArray = "W140S500L88";
