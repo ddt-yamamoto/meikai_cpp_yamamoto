@@ -16,9 +16,9 @@ using namespace std;
 
 /**
 *文字列s1の中に含まれる最も先頭に位置する文字列s2の先頭文字へのポインタを返す関数
-*@param s1
-*@param s2
-*@return returnPointer
+*@param s1 文字列s1
+*@param s2 文字列s2
+*@return returnPointer 検出した位置のポインタ
 *@author Kenta Yamamoto
 *@since 2018-10-15
 */
