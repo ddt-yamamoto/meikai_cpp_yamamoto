@@ -18,16 +18,15 @@ using namespace std;
 */
 void swapPointer(const char** argumentPointerX, const char** argumentPointerY) {
 
-	// 仮の文字列を定義
-	const char* temporaryString;
+	// 3値間の交換を行う
+	// 仮の文字列の先頭を指すポインタを定義し、Xを退避
+	const char* temporaryPointer = *argumentPointerX;
 
-	// 仮の文字列の先頭を指すポインタのポインタを定義
-	const char** temporaryPointer = &temporaryString;
+	// XにYを代入
+	*argumentPointerX = *argumentPointerY;
 
-	// 3値の交換を行う
-	*temporaryPointer = *argumentPointerX; // Xを退避
-	*argumentPointerX = *argumentPointerY; // XにYを代入
-	*argumentPointerY = *temporaryPointer; // Yに退避しておいたXを代入
+	// Yに退避しておいたXを代入
+	*argumentPointerY = temporaryPointer;
 }
 
 // main関数の定義
