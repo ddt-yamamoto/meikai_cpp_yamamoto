@@ -10,15 +10,13 @@ sが実数として解釈できないような文字列である場合には、0
 
 #include <iostream> // 入出力
 #include <cstring> // 文字列
+#include <cctype> // 文字種テスト関数
 
 // 名前空間stdの利用宣言
 using namespace std;
 
 // 文字数字の'0'にあたるchar型の値を定数で定義
 const char ZERO_CHAR = '0';
-
-// 文字数字の'9'にあたるchar型の値を定数で定義
-const char NINE_CHAR = '9';
 
 // 文字の'.'にあたるchar型の値を定数で定義
 const char PERIOD_CHAR = '.';
@@ -41,8 +39,8 @@ bool checkRealNumber(const char* s) {
 	// 文字列を走査
 	for (int countIndex = 0; s[countIndex]; countIndex++) {
 
-		// 着目中の文字が、char型の'0'～'9'の範囲でない場合
-		if (!(s[countIndex] >= ZERO_CHAR && s[countIndex] <= NINE_CHAR)) {
+		// 着目中の文字が、char型の数字文字でない場合
+		if (!isdigit(s[countIndex])) {
 
 			// 小数点でもない場合、または2個目の小数点(12.4.5など)であった場合
 			if (s[countIndex] != PERIOD_CHAR || ++periodCount > 1) {
