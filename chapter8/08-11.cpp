@@ -55,7 +55,7 @@ int myStringNumberCompare(char* s1, const char* s2, size_t n) {
 
 	// 引数で指定された回数(n回)ループする。
 	// 途中で返却値が0以外になったらその時点でループを抜ける。
-	for (int countInt = 0; countInt < static_cast<int>(n) || returnSign!= 0; countInt++) {
+	for (size_t countInt = 0; countInt < n && returnSign == 0; countInt++) {
 
 		// 文字の配列s1と文字の配列s2の両方とも、ナル文字ではない場合
 		if (s1[countInt] != '\0' && s2[countInt] != '\0') {
